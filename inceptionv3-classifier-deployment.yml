@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inceptionv3-classifier
+  labels:
+    app: inceptionv3-classifier
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inceptionv3-classifier
+  template:
+    metadata:
+      labels:
+        app: inceptionv3-classifier
+    spec:
+      containers:
+      - name: inceptionv3-classifier
+        image: inceptionv3-classifier
